@@ -9,29 +9,24 @@ import org.testng.Assert;
 public class IncidentsPage extends ProjectSpecificMethod {
 
 	public IncidentsPage searchIncident() {
-		
-		System.out.println("created incident is: "+createdIncidentNumber);
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElementByXPath("//span[contains(text(),\"Press Enter from within\")]//following-sibling::input").click();
-		driver.findElementByXPath("//span[contains(text(),\"Press Enter from within\")]//following-sibling::input").sendKeys(createdIncidentNumber);
-		driver.findElementByXPath("//span[contains(text(),\"Press Enter from within\")]//following-sibling::input").sendKeys(Keys.ENTER);
+
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("(//a[@class='col-change-sort sort_column_header']/i)[1]")));
+		driver.findElementByXPath("//span[contains(text(),\"Press Enter from within\")]//following-sibling::input")
+				.click();
+		driver.findElementByXPath("//span[contains(text(),\"Press Enter from within\")]//following-sibling::input")
+				.sendKeys(createdIncidentNumber);
+		driver.findElementByXPath("//span[contains(text(),\"Press Enter from within\")]//following-sibling::input")
+				.sendKeys(Keys.ENTER);
 		return this;
 	}
-	
+
 	public void verifySearchedResult() {
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		wait.until(ExpectedConditions
+				.refreshed(ExpectedConditions.stalenessOf(driver.findElementByXPath("//a[contains(text(),\"INC\")]"))));
+
 		String text = driver.findElementByXPath("//a[contains(text(),\"INC\")]").getText();
 		Assert.assertEquals(text, createdIncidentNumber);
 	}
-	
+
 }

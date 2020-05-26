@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="85878" started-at="2020-05-26T18:33:49 IST" finished-at="2020-05-26T18:35:15 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="85878" started-at="2020-05-26T18:33:49 IST" finished-at="2020-05-26T18:35:15 IST">
+      <class name="org.serviceNow.TestCases.TC001_CreateNewIncident">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:org.serviceNow.TestCases.TC001_CreateNewIncident@6ebc05a6]" name="launchBrowser" is-config="true" duration-ms="29439" started-at="2020-05-26T18:33:49 IST" finished-at="2020-05-26T18:34:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="createNewIncident()[pri:0, instance:org.serviceNow.TestCases.TC001_CreateNewIncident@6ebc05a6]" name="createNewIncident" duration-ms="56403" started-at="2020-05-26T18:34:19 IST" finished-at="2020-05-26T18:35:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewIncident -->
+      </class> <!-- org.serviceNow.TestCases.TC001_CreateNewIncident -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
