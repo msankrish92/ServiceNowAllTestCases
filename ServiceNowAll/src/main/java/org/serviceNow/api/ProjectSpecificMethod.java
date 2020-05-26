@@ -14,6 +14,8 @@ public class ProjectSpecificMethod {
 	
 	public static WebDriverWait wait;
 	
+	public static String createdIncidentNumber;
+	
 	@BeforeMethod
 	public void launchBrowser() {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedrivers.exe");

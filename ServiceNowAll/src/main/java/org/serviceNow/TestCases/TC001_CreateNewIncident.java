@@ -7,13 +7,20 @@ import org.testng.annotations.Test;
 public class TC001_CreateNewIncident extends ProjectSpecificMethod {
 	
 	@Test
-	public void createNewIncident() {
+	public void createNewIncident() throws InterruptedException {
 		driver.switchTo().frame("gsft_main");
 		new LoginPage()
 		.enterUserName()
 		.enterPassword()
 		.clickLoginButton()
-		.enterIncidentInFilterNavigator();
+		.enterIncidentInFilterNavigator()
+		.clickOnCreateNew()
+		.clickCallerSearchButton()
+		.getCreatingIncidentNumber()
+		.enterShortDescription()
+		.clickSubmit()
+		.searchIncident()
+		.verifySearchedResult();
 	}
 	
 }
